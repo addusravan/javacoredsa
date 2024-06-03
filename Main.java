@@ -1,23 +1,61 @@
 package org.example;
 
-import java.lang.reflect.Array;
-import java.util.List;
+import java.util.ArrayList;
 
 public class Main {
 
+static ArrayList <String>a=new ArrayList<>();
+private static void seq(String s,String b){
+
+    if(s.length()==0){
+       a.add(b) ;
 
 
-    public static void main(String[] args) {
-
-
-        List<Employee>a=EmployeeDatabase.getEmployees();
-
-      double s= a.stream().filter(W->W.getGrade().equals("A")).map(w->w.getSalary()).mapToDouble(i->i).average().getAsDouble();
-
-//       double s= a.stream().mapToInt(e-> (int) e.getSalary()).average().getAsDouble();
-
-//        singleton b=singleton.a;
-//        singleton c=singleton.a;
-       System.out.println(s);
     }
+
+    seq(s.substring(1),b+s.charAt(0));
+
+
+
 }
+
+
+    public static void main(String[] args)
+
+
+    {
+
+        String a="saturn";
+        String b="sun";
+
+
+        seq(a,b);
+
+
+
+
+   int c=0;
+
+
+        for (int i=0;i<b.length();i++) {
+            for (int j = 0; j < a.length(); j++) {
+                if (b.charAt(i)==a.charAt(j)){
+
+                   c++;
+                }
+
+
+            }
+
+            if(c==b.length()){
+                System.out.println("yes");
+            }
+
+        }
+
+
+
+        System.out.println("no");
+    }
+
+    }
